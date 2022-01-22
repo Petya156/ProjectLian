@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+}
+
+
+/* header */
+header {
+    filter: drop-shadow(1px 1.732px 2.5px rgba(0,0,0,0.15));
+    background-color: #fafafa;
+}
+
+/* wrapper - обёртка ограничивает содержимое страницы по ширине */
+.wrapper { 
+    max-width: 1140px;   /* максимальная ширина   */
+    margin: 0 auto;
+    /* margin-right: auto;   внешний отступ справа */
+    /* margin-left: auto;    внешний отступ слева  */
+}
+
+
+.nav_menu {
+    display: flex; /*Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе.*/
+    padding: 27px 0 28px 0;
+    /* padding-top: 27px;    Устанавливает значение полей вокруг содержимого элемента. */
+    /* padding-bottom: 28px; Полем называется расстояние от внутреннего края рамки элемента до воображаемого прямоугольника, ограничивающего его содержимое */
+    justify-content: space-between; /* Флексы равномерно распределяются по всей строке. Первый и последний элемент прижимаются к соответствующим краям контейнера. */
+    align-items: center; /* Флексы выравниваются по линии поперечной оси. */
+}
+
+.home_pages {
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none; /*Отключает стиль строки*/
+}
+
+.home_pages>li {
+    position: relative; /*Оно позволяет установить или изменить положение элемента*/
+    padding-left: 46px; 
+}
+
+.home_pages>li:nth-child(1)::before {
+    position: absolute;
+    top: 10px; /*Координаты*/
+    left: 0;
+    content: ""; /*позволяет вставлять генерируемое содержание в текст веб-страницы, которое первоначально в тексте отсутствует*/
+    display: block;
+    width: 20px; /*Ширина*/
+    height: 1px; /*Высота*/
+    background-color: #000000; /*Цвет фона*/
+}
+
+.home_pages>li>a {
+    font-size: 14px; /*Шрифт размер*/
+    font-weight: 700; /*Шрифт ширина*/
+    text-decoration: none; /*Нету декорации*/
+    text-transform: uppercase; /*Делает все буквы заглавными*/
+    color: #777777; /*Цвет*/
+}
+
+.home_pages>li:nth-child(1)>a {
+    color: #000000; 
+}
+
+
+/* slider */
+.slider {
+    padding: 263px 0 280px 0;
+    background-image: url(../images/home/shutterstock.png); /*Изображение на фоне*/
+    background-position: 50% 30%; /*Задаёт начальное положение фонового изображения, установленного с помощью свойства background-image*/
+    background-repeat: no-repeat; /*Определяет, как будет повторяться фоновое изображение, установленное с помощью свойства background-image.*/
+    background-size: cover; /*Масштабирует фоновое изображение, согласно заданным размерам.*/
+    background-color: #000000;
+}
+
+.slider_text {
+    text-align: center;
+}
+
+.slider_text>h1 {
+    max-width: 700px; /*максимальная толщина текста*/
+    margin: 0 auto 38px auto;
+    font-size: 46px; 
+    font-weight: 300;
+    letter-spacing: 5px; /*Определяет интервал между символами в пределах элемента.*/
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.slider_text>p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 7px; 
+    text-transform: uppercase;
+    color: #000000;
+}
+
+
+/* tab_nav */
+.tab_nav {
+    display: flex;
+    justify-content: center;
+    margin: 29px 0 33px 0;
+    padding: 20px 0 20px 0;
+    list-style-type: none;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.tab_nav>li {
+    position: relative;
+    margin-left: 23px;
+    padding-left: 23px;
+}
+
+.tab_nav>li::before {
+    position: absolute;
+    left: 0;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 20px;
+    transform: rotate(15deg);
+    background-color: #e1e1e1;
+}
+
+.tab_nav>li:nth-child(1) {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.tab_nav>li:nth-child(1)::before {
+    display: none;
+}
+
+.tab_nav>li>a {
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #777777;
+}
+
+/* список => первый элемент списка => ссылка */
+.tab_nav>li:nth-child(1)>a { 
+    color: #000000;
+}
+
+
+/* home_images */
+.home_images {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 360px 360px 360px;
+    column-gap: 30px;
+}
+
+.column_1>div:nth-child(1),
+.column_1>div:nth-child(2),
+.column_1>div:nth-child(3),
+.column_2>div:nth-child(1),
+.column_2>div:nth-child(2),
+.column_2>div:nth-child(3),
+.column_2>div:nth-child(4),
+.column_3>div:nth-child(1),
+.column_3>div:nth-child(2),
+.column_3>div:nth-child(3) {
+    margin-bottom: 30px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: #d7d7d7;
+}
+
+/* первая колонка */
+.column_1>div:nth-child(1) {
+    height: 350px;
+    background-image: url(../images/home/img_01.png);
+}
+
+.column_1>div:nth-child(2) {
+    height: 250px;
+    background-image: url(../images/home/img_04.png);
+    background-position: 20% 20%;
+}
+
+.column_1>div:nth-child(3) {
+    height: 450px;
+    background-image: url(../images/home/img_07.png);
+}
+
+/* вторая колонка */
+.column_2>div:nth-child(1) {
+    height: 250px;
+    background-image: url(../images/home/img_02.png);
+}
+
+.column_2>div:nth-child(2) {
+    height: 350px;
+    background-image: url(../images/home/img_05.png);
+}
+
+.column_2>div:nth-child(3) {
+    height: 250px;
+    background-image: url(../images/home/img_08.png);
+}
+
+.column_2>div:nth-child(4) {
+    height: 350px;
+    margin: 0;
+    background-image: url(../images/home/img_10.png);
+}
+
+/* третья колонка */
+.column_3>div:nth-child(1) {
+    height: 450px;
+    background-image: url(../images/home/img_03.png);
+}
+
+.column_3>div:nth-child(2) {
+    height: 250px;
+    background-image: url(../images/home/img_06.png);
+}
+
+.column_3>div:nth-child(3) {
+    height: 350px;
+    background-image: url(../images/home/img_09.png);
+}
+
+
+.load_more {
+    max-width: 150px;
+    min-height: 30px;
+    margin: 36px auto 73px auto;
+    text-align: center;
+    background-color: #959595;
+    border-radius: 2px;
+}
+
+.load_more>a {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+
+footer {
+    padding: 64px 0 47px 0;
+    text-align: center; 
+    filter: drop-shadow(0px -3px 2.5px rgba(163,163,163,0.1));
+    background-color: #ffffff;
+}
+
+/* soc_media */
+.soc_media {
+    display: flex;
+    justify-content: center;
+    margin: 44px 0 36px 0;
+    padding: 20px 0 20px 0;
+    list-style-type: none;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.soc_media>li {
+    padding-left: 57px;
+}
+
+.soc_media>li:nth-child(1) {
+    padding-left: 0;
+}
+
+.soc_media>li>a {
+    font-size: 14px;
+    color: #777777; 
+}
+
+footer>p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #9c9c9c;
+}
+
+footer>p>b {
+    color: #000000;
+}
+
+
+/* single_post */
+
+.slider_text_2 {
+    text-align: center;
+}
+
+.slider_2 {
+    background-image: url(../images/home/slider_01.png)
+}
+
+.slider_text_2>h1 {
+    max-width: 552px; /*максимальная толщина текста*/
+    margin: -113px 0px 0 230px;
+    font-size: 46px; 
+    font-weight: 300;
+    letter-spacing: 5px; /*Определяет интервал между символами в пределах элемента.*/
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #000000;  
+}
+
+.slider_text_2>p {
+    margin: 50px 100px -250px -1000px;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 7px; 
+    text-transform: uppercase;
+    color: #333333;
+}
+
+form {
+    text-align: center;
+}
+
+form>p {
+    margin: 0;
+}
+
+.form_label {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.input_1,
+.input_2,
+.input_3 {
+    width: 229px;
+    height: 36px;
+
+    padding: 0 0 0 19px;
+
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+}
+
+.input_2 {
+    margin: 50px 27px 22px 27px;
+}
+
+.input_1::placeholder,
+.input_2::placeholder,
+.input_3::placeholder {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    color: #c4c4c4;
+}
+
+.input_4 {
+    width: 790px;
+    height: 91px;
+    margin-bottom: 24px;
+    padding: 19px 0 0 19px;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+}
+
+.input_4::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    color: #c4c4c4;
+}
+
+.form_button {
+    width: 195px;
+    height: 45px;
+
+    padding: 0;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    
+
+    background-color: #000000;
+    border: 0;
+    border-radius: 2px;
+}
+
+.blockquote_text{
+    text-align: center;
+    
+    margin-top: 70px;
+    margin-left: 500px;
+    margin-bottom: 63px;
+    margin-right: 500px;
+    font-size: 16px; 
+    font-weight: 300;
+    letter-spacing: 5px; /*Определяет интервал между символами в пределах элемента.*/
+    text-transform: uppercase;
+    color: #333333;
+
+}
+
+.texti>h1{
+    text-align: center
+}
